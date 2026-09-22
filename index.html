@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rubber Duck, But Mean</title>
+<meta name="description" content="A rubber-duck debugging companion that pushes back on vague explanations instead of just sitting there." />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="hero">
+      <div class="duck-avatar" id="duckAvatar" aria-hidden="true">
+        <svg viewBox="0 0 120 120" width="88" height="88">
+          <ellipse class="duck-body" cx="60" cy="72" rx="46" ry="34" />
+          <circle class="duck-head" cx="78" cy="42" r="30" />
+          <path class="duck-bill" d="M 100 44 Q 118 42 116 52 Q 118 60 100 56 Z" />
+          <g class="duck-eyes">
+            <ellipse class="duck-eye" id="eyeL" cx="70" cy="34" rx="4.5" ry="5" />
+            <ellipse class="duck-eye" id="eyeR" cx="88" cy="32" rx="4.5" ry="5" />
+          </g>
+          <g class="duck-brow" id="browGroup" opacity="0">
+            <path d="M 63 26 Q 70 22 78 26" />
+            <path d="M 81 24 Q 88 20 96 24" />
+          </g>
+        </svg>
+      </div>
+      <h1>Rubber Duck, But Mean</h1>
+      <p class="tagline">Explain your bug. It won't just nod along.</p>
+      <div class="skepticism-wrap">
+        <span class="skepticism-label">Skepticism</span>
+        <div class="skepticism-bar"><div id="skepticismFill" class="skepticism-fill"></div></div>
+      </div>
+    </header>
+
+    <main class="chat-card">
+      <div id="chatLog" class="chat-log">
+        <div class="msg duck">
+          <div class="bubble">Alright. What are you debugging?</div>
+        </div>
+      </div>
+
+      <form id="chatForm" class="chat-input-row">
+        <textarea id="chatInput" rows="2" placeholder="My function returns undefined sometimes..." autofocus></textarea>
+        <button type="submit" class="send-btn" aria-label="Send">Send</button>
+      </form>
+    </main>
+
+    <footer class="foot">
+      Fully rule-based, runs in your browser. No API, nothing you type leaves this page.
+      <button id="resetBtn" class="reset-link" type="button">Start over</button>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
