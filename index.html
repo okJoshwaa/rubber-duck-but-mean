@@ -8,20 +8,36 @@
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <canvas id="bgCanvas"></canvas>
   <div class="app">
     <header class="hero">
       <div class="duck-avatar" id="duckAvatar" aria-hidden="true">
-        <svg viewBox="0 0 120 120" width="88" height="88">
-          <ellipse class="duck-body" cx="60" cy="72" rx="46" ry="34" />
-          <circle class="duck-head" cx="78" cy="42" r="30" />
-          <path class="duck-bill" d="M 100 44 Q 118 42 116 52 Q 118 60 100 56 Z" />
+        <svg viewBox="0 0 140 130" width="104" height="104">
+          <defs>
+            <linearGradient id="duckBodyGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#ffe28a" />
+              <stop offset="100%" stop-color="#ffc93c" />
+            </linearGradient>
+            <linearGradient id="duckBillGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ff9f43" />
+              <stop offset="100%" stop-color="#e8770f" />
+            </linearGradient>
+          </defs>
+          <ellipse class="duck-tail" cx="22" cy="92" rx="18" ry="14" />
+          <ellipse class="duck-body" cx="68" cy="94" rx="50" ry="34" />
+          <path class="duck-wing" d="M 30 100 Q 68 118 108 98" />
+          <circle class="duck-head" cx="92" cy="48" r="32" />
+          <ellipse class="duck-shine" cx="80" cy="35" rx="10" ry="6" />
+          <path class="duck-bill" d="M 106 46 Q 128 42 130 54 Q 128 66 106 60 Q 100 53 106 46 Z" />
+          <path class="duck-bill-line" d="M 108 53 L 126 53" />
           <g class="duck-eyes">
-            <ellipse class="duck-eye" id="eyeL" cx="70" cy="34" rx="4.5" ry="5" />
-            <ellipse class="duck-eye" id="eyeR" cx="88" cy="32" rx="4.5" ry="5" />
+            <circle class="duck-eye-white" id="eyeWhiteL" cx="82" cy="38" r="12" />
+            <ellipse class="duck-eye" id="eyeL" cx="86" cy="39" rx="6" ry="6" />
+            <circle class="duck-eye-shine" cx="88" cy="37" r="2" />
           </g>
+          <ellipse class="duck-blush" cx="88" cy="62" rx="8" ry="5" />
           <g class="duck-brow" id="browGroup" opacity="0">
-            <path d="M 63 26 Q 70 22 78 26" />
-            <path d="M 81 24 Q 88 20 96 24" />
+            <path d="M 72 24 Q 82 16 92 22" />
           </g>
         </svg>
       </div>
@@ -52,6 +68,7 @@
     </footer>
   </div>
 
+  <script src="particles.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
